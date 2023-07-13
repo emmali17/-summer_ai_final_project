@@ -8,6 +8,42 @@ from adversarialsearchproblem import (
 
 
 def minimax(asp: AdversarialSearchProblem[GameState, Action]) -> Action:
+    this_game = asp.get_start_state()
+    player = this_game.player_to_move()
+    goMoves = asp.get_available_actions(this_game)
+    bestMove = None
+    bestValue = float("-inf")
+    for move in goMoves:
+        next_state = asp.transition(this_game, move)
+        value = min_value(asp, next_state, player)
+        if value > bestValue:
+            bestMove = move
+            bestValue = value
+    return bestMove
+
+
+def max_value(asp, gameState, player):
+    if asp.is_terminal_state(gameState):
+        scores = asp.evaluate_terminal(gameState)
+        return scores[player]
+    maxScore = float("-inf")
+    goMoves = asp.get_available_actions(gameState)
+    for move in goMoves:
+        next_state = asp.transition(gameState, move)
+        maxScore = max(maxScore, min_value(asp, next_state, player))
+    return maxScore
+
+def min_value(asp, gameState, player):
+    if asp.is_terminal_state(gameState):
+        scores = asp.evaluate_terminal(gameState)
+        return scores[player]
+    minScore = float("inf")
+    goMoves = asp.get_available_actions(gameState)
+    for move in goMoves:
+        next_state = asp.transition(gameState, move)
+        minScore = min(minScore, max_value(asp, next_state, player))
+    return minScore
+    
     """
     Implement the minimax algorithm on ASPs, assuming that the given game is
     both 2-player and constant-sum.
