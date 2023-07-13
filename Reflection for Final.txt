@@ -1,0 +1,57 @@
+﻿Reflection For Final 
+Emma and Samiksha
+
+
+We worked on the Adversarial Search Problem. In this task we were supposed to implement a minimax or alpha-beta algorithm to evaluate a function for the game Tic-Tac-Toe and Connect4. We decided to use minimax as we thought that using minimax explored all paths unlike alpha-beta. We used 3 different functions in our code. We were a little stuck when we started as we were not familiar with what we had to do, but then we made a pseudocode which really helped us. Next we translated the pseudocode to a python code and we ran the projects a few times to see if there were any errors. We found a few so we debugged it. Lastly we played the game a few times to make sure the code worked perfectly. Our project works very well on Samiksha’s laptop but since Emma has an old version of python it does not work very well. We figured it out and it  runs in her  terminal now. We think our methods were quite good. The code works perfectly. If we had more time we would make an alpha-beta algorithm for the connect 4 project as when you run it through minimax it is extremely slow. 
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pseudocode we used
